@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .projects {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .projects h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #2c3e50;
+      animation: slideDown 1.5s ease;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      animation: fadeUp 2s ease;
+    }
+
+    .project-card h2 {
+      color: #2980b9;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      animation: pulse 2s infinite;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .false-message {
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: red;
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+      from {transform: translateY(-50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+    @keyframes fadeUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MyPortfolio</div>
+    <div class="back-button">
+      <a href="index.html">← Back</a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="projects">
+    <h1>My Projects</h1>
+
+    <div class="project-card">
+      <h2>Web Development</h2>
+      <p>Websites and applications I’ve built using HTML, CSS, JS, and more.</p>
+      <button class="btn" onclick="showFalseMessage(this)">View Details</button>
+      <div class="false-message">Your device can’t open the details, please check your device viruses then try again</div>
+    </div>
+
+    <div class="project-card">
+      <h2>Data Analysis</h2>
+      <p>Dashboards, reports, and business insights from inventory and economics.</p>
+      <button class="btn" onclick="showFalseMessage(this)">View Details</button>
+      <div class="false-message">Your device can’t open the details, please check your device viruses then try again</div>
+    </div>
+
+    <div class="project-card">
+      <h2>Computer Graphics</h2>
+      <p>Logos, posters, and creative digital designs.</p>
+      <button class="btn" onclick="showFalseMessage(this)">View Details</button>
+      <div class="false-message">Your device can’t open the details, please check your device viruses then try again</div>
+    </div>
+
+    <div class="project-card">
+      <h2>Photography</h2>
+      <p>Capturing landscapes, events, and portraits with creativity.</p>
+      <button class="btn" onclick="showFalseMessage(this)">View Details</button>
+      <div class="false-message">Your device can’t open the details, please check your device viruses then try again</div>
+    </div>
+
+    <div class="project-card">
+      <h2>Music</h2>
+      <p>My creative side expressed through music and sound projects.</p>
+      <button class="btn" onclick="showFalseMessage(this)">View Details</button>
+      <div class="false-message">Your device can’t open the details, please check your device viruses then try again</div>
+    </div>
+  </section>
+
+  <script>
+    function showFalseMessage(button) {
+      const message = button.nextElementSibling;
+      message.style.display = "block";
+      setTimeout(() => {
+        message.style.display = "none";
+      }, 4000); // hides after 4 seconds
+    }
+  </script>
+</body>
+</html>
+
+

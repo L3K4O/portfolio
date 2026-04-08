@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .contact {
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .contact h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #2c3e50;
+      animation: slideDown 1.5s ease;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      animation: fadeUp 2s ease;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #2980b9;
+      outline: none;
+    }
+
+    .btn {
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      animation: pulse 2s infinite;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .confirmation {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideDown {
+      from {transform: translateY(-50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+    @keyframes fadeUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MyPortfolio</div>
+    <div class="back-button">
+      <a href="index.html">← Back</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact">
+    <h1>Contact Me</h1>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="text" id="whatsappNumber" placeholder="Your WhatsApp Number" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+
+      <button type="button" id="sendWhatsapp" class="btn">📱 Send via WhatsApp</button>
+      <button type="button" id="sendEmail" class="btn">✉️ Send via Email</button>
+
+      <div id="confirmation" class="confirmation">✅ Submitted</div>
+    </form>
+  </section>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const confirmation = document.getElementById("confirmation");
+
+    function showConfirmation() {
+      confirmation.style.display = "block";
+      setTimeout(() => {
+        confirmation.style.display = "none";
+      }, 3000); // hides after 3 seconds
+    }
+
+    document.getElementById("sendWhatsapp").addEventListener("click", function() {
+      if (form.checkValidity()) {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const whatsappNumber = document.getElementById("whatsappNumber").value;
+        const message = document.getElementById("message").value;
+
+        const fullMessage = `Hello, my name is ${name}. My email is ${email}. My WhatsApp number is ${whatsappNumber}. Message: ${message}`;
+        const phoneNumber = "255781942658"; // Your WhatsApp number with country code
+
+        window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`, "_blank");
+        showConfirmation();
+      } else {
+        form.reportValidity();
+      }
+    });
+
+    document.getElementById("sendEmail").addEventListener("click", function() {
+      if (form.checkValidity()) {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const whatsappNumber = document.getElementById("whatsappNumber").value;
+        const message = document.getElementById("message").value;
+
+        const subject = `Message from ${name}`;
+        const body = `Name: ${name}%0AEmail: ${email}%0AWhatsApp: ${whatsappNumber}%0A%0AMessage:%0A${message}`;
+
+        window.location.href = `mailto:myusuph156@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        showConfirmation();
+      } else {
+        form.reportValidity();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .about h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #2c3e50;
+      animation: slideDown 1.5s ease;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .photo-block {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeUp 2s ease;
+    }
+
+    .photo-block h2 {
+      margin-bottom: 15px;
+      color: #2980b9;
+    }
+
+    .photo-block img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+      animation: zoomIn 2s ease;
+    }
+
+    .photo-block p {
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideDown {
+      from {transform: translateY(-50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+    @keyframes fadeUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+    @keyframes zoomIn {
+      from {transform: scale(0.8); opacity: 0;}
+      to {transform: scale(1); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MyPortfolio</div>
+    <div class="back-button">
+      <a href="index.html">← Back</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="about">
+    <h1>About Me</h1>
+    <div class="about-content">
+
+      <!-- Intro -->
+      <div class="photo-block">
+        <h2>Introduction</h2>
+        <p>My name is <strong>MICHAEL, YUSUPH MASHAKA</strong>, and I am 23 years old. I am a Tanzanian student with a passion for Business, Economics, Data Analysis, and Information Technology. My journey combines academic excellence, practical work experience, and creative pursuits.</p>
+      </div>
+
+      <!-- Birth Region -->
+      <div class="photo-block">
+        <h2>Tabora Region</h2>
+        <img src="tabora.png" alt="Tabora Region">
+        <p>I was born in Tabora, Tanzania. Growing up here instilled discipline, resilience, and cultural values that continue to guide me. Tabora remains my home address, even as I balance life between Dar es Salaam and Zanzibar.</p>
+      </div>
+
+      <!-- University -->
+      <div class="photo-block">
+        <h2>University of Dar es Salaam</h2>
+        <img src="udsm.png" alt="University of Dar es Salaam">
+        <p>I am currently a student at the University of Dar es Salaam, pursuing a Bachelor of Science in Business Information Technology (BIT). This program allows me to merge business knowledge with IT skills, preparing me for roles in data management, analysis, and digital transformation. My academic journey has been marked by dedication, graduating Form Six in 2024 with Division One.</p>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="photo-block">
+        <h2>Pongwe Bay Resort</h2>
+        <img src="pongwebay.png" alt="Pongwe Bay Resort">
+        <p>In Zanzibar, I work at Pongwe Bay Resort as a Store Keeper in inventory and procurement control. This role has given me hands-on experience in managing supplies, ensuring accuracy in data entry, and supporting business operations. It has strengthened my analytical skills and ability to adapt to real-world challenges.</p>
+      </div>
+
+      <!-- JKT Training -->
+      <div class="photo-block">
+        <h2>JKT Training</h2>
+        <img src="jkt.png" alt="JKT Training">
+        <p>I successfully completed JKT training, which enhanced my discipline, teamwork, and leadership abilities. This experience taught me resilience and practical skills that I apply in both academic and professional settings.</p>
+      </div>
+
+      <!-- Photography -->
+      <div class="photo-block">
+        <h2>Photography</h2>
+        <img src="photography.png" alt="Photography">
+        <p>Photography is one of my creative outlets. I enjoy capturing landscapes, portraits, and events, especially in Zanzibar and Dar es Salaam. This hobby keeps me balanced and allows me to express creativity beyond academics and work.</p>
+      </div>
+
+      <!-- Music -->
+      <div class="photo-block">
+        <h2>Music</h2>
+        <img src="music.png" alt="Music">
+        <p>Music inspires me and fuels my creativity. Whether listening or practicing instruments, it provides relaxation and artistic expression. It complements my professional and academic life, keeping me motivated and imaginative.</p>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
